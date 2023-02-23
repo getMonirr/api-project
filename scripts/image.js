@@ -1,7 +1,11 @@
 
-const maxItems = 10;
 let prevLoad = 0;
 let nextLoad = 10;
+
+const galleryContainer = document.getElementById('gallery-container');
+('load-more-container');
+const userCard = document.getElementById('user-container');
+const loadMoreBtn = document.getElementById('load-more');
 
 const displayGalleryUI = (title, url, albumId, id) => {
 
@@ -27,6 +31,11 @@ const displayGalleryUI = (title, url, albumId, id) => {
 }
 
 const getImgData = () => {
+    userCard.classList.add('hidden');
+    galleryContainer.classList.remove('hidden');
+    loadMoreBtn.classList.remove('hidden');
+
+
     fetch('https://jsonplaceholder.typicode.com/photos')
         .then(res => res.json())
         .then(data => setImg(data))
@@ -47,7 +56,6 @@ const handleLoadMore = () => {
 
 // selection
 const imageGallery = document.getElementById('load-image-gallery');
-const loadMoreBtn = document.getElementById('load-more');
 
 // add event listener
 imageGallery.addEventListener('click', getImgData);
