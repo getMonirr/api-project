@@ -2,80 +2,109 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Load user info - api</title>
-    <!-- daisyUI and tailwind css -->
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.51.0/dist/full.css" rel="stylesheet" type="text/css" />
-    <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Load user info - api</title>
+  <!-- daisyUI and tailwind css -->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@2.51.0/dist/full.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
 
 </head>
 
 <body class="container mx-auto p-4">
-    <header class="text-center my-8">
-        <div class="navbar bg-base-100">
-            <div class="navbar-start">
-              <div class="dropdown">
-                <label tabindex="0" class="btn btn-ghost lg:hidden">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
-                </label>
-                <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-                  <li><a class="btn btn-primary my-2">load-user</a></li>
-                  
-                  <li><a class="btn btn-primary my-2">load-image-gallery</a></li>
-                </ul>
-              </div>
-              <a class="btn btn-ghost normal-case text-xl">Get Monir</a>
-            </div>
-            <div class="navbar-center hidden lg:flex">
-              <ul class="menu menu-horizontal px-1">
-                <li><a id="load-user" class="btn btn-primary mx-2">load-user</a></li>
-                <li><a id="load-image-gallery" class="btn btn-primary mx-2">load-image-gallery</a></li>
-              </ul>
-            </div>
-            <div class="navbar-end">
-              <a class="btn">Get started</a>
-            </div>
-          </div>
-        <h1 class="text-6xl font-bold py-4">Welcome to the <span class="text-secondary">API </span> project</h1>
-        <p class="text-xl font-bold">Just <kbd class="kbd kbd-lg bg-primary">click</kbd> the menu Item and see the result</p>
-    </header>
-    <main>
-        <!-- user data -->
-        <section id="user-container" class="grid grid-cols-2 lg:grid-cols-3 gap-2 lg:gap-4">
-            <!-- user goes here -->
-        </section>
-        <!-- image gallery section -->
-        <section>
-            <div id="gallery-container" class="grid grid-cols-2 lg:grid-cols-3 gap-2 lg:gap-4">
-                <!-- image goes here -->
-                
-            </div>
-            <div id="load-more-container">
-                <button id="load-more" class="btn  btn-secondary my-4 hidden">Load-more</button>
-            </div>
-        </section>
-        <!-- social media   -->
-        <section>
-            <div class="w-3/4 mx-auto border border-accent p-10 rounded-lg text-center">
-                <h2 class="text-2xl uppercase my-4 mb-10">post your emotion</h2>
-                <form id="post-btn" action="" class="flex flex-col space-y-4">
-                    <input id="title" style="width: 100%;" required type="text" placeholder="Your title" class="input input-bordered input-primary w-full max-w-xs" />
-                    <textarea id="emotion" class="textarea textarea-primary" placeholder="Your emotion"></textarea>
-                    <input required type="submit" value="Post" class="btn btn-secondary">
-                </form>
-            </div>
-        </section>
-        <section id="post-container" class="post-container grid grid-cols-3 gap-4 my-8 ">
-            <!-- post goes here -->
-        </section>
-    </main>
+  <header class="text-center my-8">
+    <div class="navbar bg-base-100">
+      <div class="navbar-start">
+        <div class="dropdown">
+          <label tabindex="0" class="btn btn-ghost lg:hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
+            </svg>
+          </label>
+          <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+            <li><a class="btn btn-primary my-2">load-user</a></li>
 
-    <!-- script file -->
-    <script src="./scripts/user.js"></script>
-    <script src="./scripts/image.js"></script>
-    <script src="./scripts/post.js"></script>
+            <li><a class="btn btn-primary my-2">load-image-gallery</a></li>
+          </ul>
+        </div>
+        <a class="btn btn-ghost normal-case text-xl">Get Monir</a>
+      </div>
+      <div class="navbar-center hidden lg:flex">
+        <ul class="menu menu-horizontal px-1">
+          <li><a id="load-user" class="btn btn-primary mx-2">load-user</a></li>
+          <li><a id="load-image-gallery" class="btn btn-primary mx-2">load-image-gallery</a></li>
+        </ul>
+      </div>
+      <div class="navbar-end">
+        <a class="btn">Get started</a>
+      </div>
+    </div>
+    <h1 class="text-6xl font-bold py-4">Welcome to the <span class="text-secondary">API </span> project</h1>
+    <p class="text-xl font-bold">Just <kbd class="kbd kbd-lg bg-primary">click</kbd> the menu Item and see the result
+    </p>
+  </header>
+  <main>
+    <!-- user data -->
+    <section id="user-container" class="grid grid-cols-2 lg:grid-cols-3 gap-2 lg:gap-4">
+      <!-- user goes here -->
+    </section>
+    <!-- image gallery section -->
+    <section>
+      <div id="gallery-container" class="grid grid-cols-2 lg:grid-cols-3 gap-2 lg:gap-4">
+        <!-- image goes here -->
+
+      </div>
+      <div id="load-more-container">
+        <button id="load-more" class="btn  btn-secondary my-4 hidden">Load-more</button>
+      </div>
+    </section>
+    <!-- social media   -->
+    <section>
+      <div class="w-2/4 mx-auto border border-accent p-10 rounded-lg text-center">
+        <h2 class="text-2xl uppercase my-4 mb-10">post your emotion</h2>
+        <form id="post-btn" action="" class="flex flex-col space-y-4">
+          <input id="title" style="width: 100%;" required type="text" placeholder="Your title"
+            class="input input-bordered input-primary w-full max-w-xs" />
+          <textarea id="emotion" class="textarea textarea-primary" placeholder="Your emotion"></textarea>
+          <input required type="submit" value="Post" class="btn btn-secondary">
+        </form>
+      </div>
+    </section>
+    <section id="post-container" class="post-container grid grid-cols-3 gap-4 my-8 ">
+      <!-- post goes here -->
+      <!-- post 1 -->
+<!-- 
+      <div class="card w-96 bg-primary text-primary-content my-4">
+        <div class="card-body">
+          <h2 class="card-title">This is My first Post</h2>
+          <p>Iam so exited to post my emotion</p>
+          <div class="card-actions justify-end">
+            <button id="delete" class="btn btn-warning btn-sm">Delete</button>
+            <button id="update" class="btn btn-sm">Update</button>
+          </div>
+        </div>
+      </div> -->
+      <!-- post 2 -->
+      <!-- <div class="card w-96 bg-primary text-primary-content my-4">
+        <div class="card-body">
+          <h2 class="card-title">This is My first Post}</h2>
+          <p>Iam so exited to post my emotion</p>
+          <div class="card-actions justify-end">
+            <button id="delete" class="btn btn-warning btn-sm">Delete</button>
+            <button id="update" class="btn btn-sm">Update</button>
+          </div>
+        </div>
+      </div> -->
+    </section>
+  </main>
+
+  <!-- script file -->
+  <script src="./scripts/user.js"></script>
+  <script src="./scripts/image.js"></script>
+  <script src="./scripts/post.js"></script>
+  <script src="./scripts/delete.js"></script>
 </body>
 
 </html>

@@ -1,18 +1,20 @@
 // selection
+
+let id = 0;
 const postBtn = document.getElementById('post-btn');
 const titleInput = document.getElementById('title');
 const emotionInput = document.getElementById('emotion');
 
 const handlePost = (e) => {
+    id += 1;
     e.preventDefault();
     const title = titleInput.value;
     const emotion = emotionInput.value;
-    const id = 0;
-    postOnServer(title, emotion, (id + 1))
+    postOnServer(title, emotion, (id))
 }
 
 // display post in ui
-const displayPost = (title,emotion) => {
+const displayPost = (title, emotion, id) => {
     const postContainer = document.getElementById('post-container');
     const div = document.createElement('div');
     div.innerHTML = `
@@ -20,9 +22,9 @@ const displayPost = (title,emotion) => {
     <div class="card-body">
       <h2 class="card-title">${title}</h2>
       <p>${emotion}</p>
-      <div class="card-actions justify-end">
-        <button class="btn btn-warning btn-sm">Delete</button>
-        <button class="btn btn-sm">Update</button>
+      <div id="${id}" class="card-actions justify-end">
+        <button id="delete" class="btn btn-warning btn-sm">Delete</button>
+        <button id="update" class="btn btn-sm">Update</button>
       </div>
     </div>
   </div>
@@ -32,8 +34,8 @@ const displayPost = (title,emotion) => {
 
 // set post
 const setPost = (data) => {
-    const { title, body } = data;
-    displayPost(title, body);
+    const { title, body, id } = data;
+    displayPost(title, body, id);
 }
 
 // post to and get form server
