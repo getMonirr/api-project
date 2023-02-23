@@ -56,11 +56,26 @@
                 <button id="load-more" class="btn  btn-secondary my-4 hidden">Load-more</button>
             </div>
         </section>
+        <!-- social media   -->
+        <section>
+            <div class="w-3/4 mx-auto border border-accent p-10 rounded-lg text-center">
+                <h2 class="text-2xl uppercase my-4 mb-10">post your emotion</h2>
+                <form id="post-btn" action="" class="flex flex-col space-y-4">
+                    <input id="title" style="width: 100%;" required type="text" placeholder="Your title" class="input input-bordered input-primary w-full max-w-xs" />
+                    <textarea id="emotion" class="textarea textarea-primary" placeholder="Your emotion"></textarea>
+                    <input required type="submit" value="Post" class="btn btn-secondary">
+                </form>
+            </div>
+        </section>
+        <section id="post-container" class="post-container grid grid-cols-3 gap-4 my-8 ">
+            <!-- post goes here -->
+        </section>
     </main>
 
     <!-- script file -->
     <script src="./scripts/user.js"></script>
     <script src="./scripts/image.js"></script>
+    <script src="./scripts/post.js"></script>
 </body>
 
 </html>
