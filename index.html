@@ -23,7 +23,7 @@
                 <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                   <li><a class="btn btn-primary my-2">load-user</a></li>
                   
-                  <li><a class="btn btn-primary my-2">load-todo</a></li>
+                  <li><a class="btn btn-primary my-2">load-image-gallery</a></li>
                 </ul>
               </div>
               <a class="btn btn-ghost normal-case text-xl">Get Monir</a>
@@ -31,7 +31,7 @@
             <div class="navbar-center hidden lg:flex">
               <ul class="menu menu-horizontal px-1">
                 <li><a id="load-user" class="btn btn-primary mx-2">load-user</a></li>
-                <li><a class="btn btn-primary mx-2">load-todos</a></li>
+                <li><a id="load-image-gallery" class="btn btn-primary mx-2">load-image-gallery</a></li>
               </ul>
             </div>
             <div class="navbar-end">
@@ -42,13 +42,25 @@
         <button class="font-bold text-2xl btn btn-secondary">Load your data</button>
     </header>
     <main>
+        <!-- user data -->
         <section id="user-container" class="grid grid-cols-2 lg:grid-cols-3 gap-2 lg:gap-4">
             <!-- user goes here -->
+        </section>
+        <!-- image gallery section -->
+        <section>
+            <div id="gallery-container" class="grid grid-cols-2 lg:grid-cols-3 gap-2 lg:gap-4">
+                <!-- image goes here -->
+                
+            </div>
+            <div id="load-more-container">
+                <button id="load-more" class="btn  btn-secondary my-4">Load-more</button>
+            </div>
         </section>
     </main>
 
     <!-- script file -->
     <script src="./scripts/user.js"></script>
+    <script src="./scripts/image.js"></script>
 </body>
 
 </html>
