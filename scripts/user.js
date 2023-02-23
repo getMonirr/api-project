@@ -20,7 +20,7 @@ const displayUI = (name, id,city,street,catchPhrase) => {
     `;
     userCard.appendChild(div);
 }
-const loadData = () => {
+const loadUserData = () => {
     fetch('https://jsonplaceholder.typicode.com/users')
         .then(res => res.json())
         .then(data => setData(data))
@@ -37,5 +37,5 @@ const setData = (data) => {
 
 // add event listener 
 const loadUser = document.getElementById('load-user');
-loadUser.addEventListener('click',loadData);
+loadUser.addEventListener('click',loadUserData);
 
