@@ -7,6 +7,8 @@ const galleryContainer = document.getElementById('gallery-container');
 const userCard = document.getElementById('user-container');
 const loadMoreBtn = document.getElementById('load-more');
 
+const restImgElement = document.getElementById('rest-img');
+
 const displayGalleryUI = (title, url, albumId, id) => {
 
     const galleryContainer = document.getElementById('gallery-container');
@@ -42,10 +44,11 @@ const getImgData = () => {
 }
 
 const setImg = (data) => {
-    data.slice(prevLoad, nextLoad).map(img => {
-        const { title, id, url, albumId } = img;
-        displayGalleryUI(title, url, albumId, id);
-    })
+  data.slice(prevLoad, nextLoad).map(img => {
+    const { title, id, url, albumId } = img;
+    displayGalleryUI(title, url, albumId, id);
+  })
+  restImgElement.innerHTML = `${nextLoad} of ${data.length}`;
 }
 
 const handleLoadMore = () => {
