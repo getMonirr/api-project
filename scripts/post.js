@@ -4,6 +4,9 @@ let id = 0;
 const postBtn = document.getElementById('post-btn');
 const titleInput = document.getElementById('title');
 const emotionInput = document.getElementById('emotion');
+const socialMediaPost = document.getElementById('load-social-post');
+// const postContainer = document.getElementById('post-container');
+// const postDiv = document.getElementById('post-div');
 
 const handlePost = (e) => {
     id += 1;
@@ -36,6 +39,8 @@ const displayPost = (title, emotion, id) => {
 const setPost = (data) => {
     const { title, body, id } = data;
     displayPost(title, body, id);
+    titleInput.value = '';
+    emotionInput.value = '';
 }
 
 // post to and get form server
@@ -62,3 +67,35 @@ const postOnServer = (title, emotion, id) => {
 // add event listener
 
 postBtn.addEventListener('submit', handlePost);
+socialMediaPost.addEventListener('click', () => {
+    postContainer.classList.remove('hidden');
+    postDiv.classList.remove('hidden');
+    galleryContainer.classList.add('hidden');
+    userCard.classList.add('hidden');
+    loadMoreContainer.classList.add('hidden')
+
+})
+
+
+
+const handleDelete = (e) => {
+    if (e.target.id === 'delete') {
+        const targetPostId = parseInt(e.target.parentNode.id);
+        fetch(`https://jsonplaceholder.typicode.com/posts/${targetPostId}`, {
+            method: 'DELETE',
+        });
+        fetch(`https://jsonplaceholder.typicode.com/posts/1`)
+            .then(res => res.json())
+            .then(post => {
+                if (post.id !== targetPostId) {
+                    e.target.parentNode.parentNode.parentNode.remove(e.target)
+                }
+            })
+
+    } else if (e.target.id === 'update') {
+        console.log('update');
+    }
+}
+
+// add event listener
+postContainer.addEventListener('click', handleDelete);

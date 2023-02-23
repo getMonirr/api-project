@@ -2,19 +2,14 @@
 let prevLoad = 0;
 let nextLoad = 10;
 
-const galleryContainer = document.getElementById('gallery-container');
-('load-more-container');
-const userCard = document.getElementById('user-container');
 const loadMoreBtn = document.getElementById('load-more');
-
 const restImgElement = document.getElementById('rest-img');
+// const postDiv = document.getElementById('post-div');
+// const postContainer = document.getElementById('post-container');
 
 const displayGalleryUI = (title, url, albumId, id) => {
-
-    const galleryContainer = document.getElementById('gallery-container');
-    ('load-more-container');
-    const div = document.createElement('div');
-    div.innerHTML = `
+  const div = document.createElement('div');
+  div.innerHTML = `
     <div class="card w-96 bg-base-100 shadow-xl">
     <figure><img src="${url}" alt="Shoes" /></figure>
     <div class="card-body">
@@ -29,18 +24,21 @@ const displayGalleryUI = (title, url, albumId, id) => {
     </div>
   </div>
     `;
-    galleryContainer.appendChild(div);
+  galleryContainer.appendChild(div);
 }
 
 const getImgData = () => {
-    userCard.classList.add('hidden');
-    galleryContainer.classList.remove('hidden');
-    loadMoreBtn.classList.remove('hidden');
+  userCard.classList.add('hidden');
+  galleryContainer.classList.remove('hidden');
+  loadMoreBtn.classList.remove('hidden');
+  loadMoreContainer.classList.remove('hidden')
+  postDiv.classList.add('hidden');
+  postContainer.classList.add('hidden')
 
 
-    fetch('https://jsonplaceholder.typicode.com/photos')
-        .then(res => res.json())
-        .then(data => setImg(data))
+  fetch('https://jsonplaceholder.typicode.com/photos')
+    .then(res => res.json())
+    .then(data => setImg(data))
 }
 
 const setImg = (data) => {
@@ -52,9 +50,9 @@ const setImg = (data) => {
 }
 
 const handleLoadMore = () => {
-    prevLoad += 10;
-    nextLoad += 10;
-    getImgData();
+  prevLoad += 10;
+  nextLoad += 10;
+  getImgData();
 }
 
 // selection

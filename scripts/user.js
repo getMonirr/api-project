@@ -1,6 +1,11 @@
+const galleryContainer = document.getElementById('gallery-container');
+const userCard = document.getElementById('user-container');
+
+const loadMoreContainer = document.getElementById('load-more-container');
+const postDiv = document.getElementById('post-div');
+const postContainer = document.getElementById('post-container');
 
 const displayUI = (name, id, city, street, catchPhrase) => {
-  const userCard = document.getElementById('user-container');
   const div = document.createElement('div');
   div.innerHTML = `
             <div class="card w-96 bg-base-100 shadow-xl">
@@ -21,12 +26,13 @@ const displayUI = (name, id, city, street, catchPhrase) => {
   userCard.appendChild(div);
 }
 const loadUserData = () => {
-  const galleryContainer = document.getElementById('gallery-container');
   ('load-more-container');
   galleryContainer.classList.toggle('hidden');
-
-  const userCard = document.getElementById('user-container');
   userCard.classList.remove('hidden');
+  postDiv.classList.add('hidden');
+  postContainer.classList.add('hidden');
+  loadMoreContainer.classList.add('hidden');
+
   fetch('https://jsonplaceholder.typicode.com/users')
     .then(res => res.json())
     .then(data => setData(data))
