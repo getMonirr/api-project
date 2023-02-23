@@ -8,4 +8,6 @@ technology used:
 5. JSON PlaceHolder API
 6. Browser Fetch API
 7. DaisyUI
-
+ # Live Link
+ 
+https://getmonirr.github.io/api-project/
